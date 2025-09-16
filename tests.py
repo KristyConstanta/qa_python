@@ -90,4 +90,6 @@ class TestBooksCollector:
 
     
     def test_get_list_of_favorites_books(self, collector):
-        assert collector.get_list_of_favorites_books() == []
+        collector.add_new_book('Хоббит Нежданное приключение')
+        collector.add_book_in_favorites("Хоббит Нежданное приключение")
+        assert collector.get_list_of_favorites_books() == ['Хоббит Нежданное приключение']
